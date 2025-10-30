@@ -1,0 +1,623 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+header {
+  background-color: #FFF5E1; 
+  width: 100%;               
+  position: fixed;           
+  top: 0;                    
+  left: 0;
+  z-index: 1000;             
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
+}
+
+nav {
+  max-width: 1200 px;
+  margin: 0 auto;
+  font-family: 'Poppins', sans-serif;
+  padding: 15px  20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-family: 'great vibes',cursive;
+  font-size: 25px;
+  color: rgb(183, 88, 88);
+  text-decoration: none;
+}
+
+.nav-links {
+  list-style: none;
+  gap: 20px;
+  display: flex;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #5C4033;
+  font-weight: 500;
+  transition: color 0.3;
+}
+
+.nav-links a:hover {
+  color: rgb(237, 91, 115);
+}
+
+.hero {
+  height: 100vh; /* full viewport height */
+  background-image: url('../images/hero-bg.jpg'); /* your hero image */
+  background-size: cover; /* fill container, keep aspect ratio */
+  background-position: center; /* center the image */
+  background-repeat: no-repeat; /* no tiling */
+  display: flex; /* center the content */
+  align-items: center; /* vertically center */
+  justify-content: center; /* horizontally center */
+  text-align: center; /* center text */
+  position: relative; /* for overlay later */
+}
+
+.hero-content {
+  font-family: 'poppins',sans-serif;
+  color: #5C4033;
+  position: relative;
+  padding: 20px;
+  z-index: 1;
+  max-width: 600px;
+}
+
+.hero-content h1 {
+  font-size: 30px;
+  font-family: 'great vibes',cursive;
+  margin-bottom: 30px;
+}
+
+.hero-content p {
+  font-size: 18;
+  margin-bottom: 20px;
+}
+
+.btn {
+  background-color:#f137f4;
+  color: white;
+  display: inline-block;
+  border-radius: 30px;
+  padding: 15px 30px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #a80571;
+}
+
+.about-preview {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 80px 10%;
+  background-color: #fff8f2; /* cozy, bakery-like tone */
+}
+
+.about-text h3 {
+  font-size: 2rem;
+  color: #4b2e05;
+  margin-bottom: 1rem;
+}
+
+.about-text p {
+  font-size: 1.1rem;
+  color: #5c4c3a;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.about-image {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end; /* aligns image to the right */
+  align-items: center;
+}
+
+.about-image img {
+  width: auto; /* Changed from 100% */
+  max-width: 500px;
+  height: auto; /* maintain aspect ratio */
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+}
+/* PRODUCTS SECTION */
+.Products-preview {
+  text-align: center;
+  padding: 80px 10%;
+  background-color: #fff;
+}
+
+.Products-preview h3 {
+  font-size: 2rem;
+  color: #4b2e05;
+  margin-bottom: 40px;
+}
+
+.product-list {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.product-card {
+  background-color: #fff8f2;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  padding: 20px;
+  width: 250px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.product-card img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.product-card h4 {
+  color: #5C4033;
+  margin-bottom: 5px;
+}
+
+.product-card p {
+  color: #6d5c4a;
+  margin-bottom: 10px;
+}
+
+.product-card span {
+  font-weight: bold;
+  color: #E08E45;
+}
+
+/* ====== FOOTER SECTION ====== */
+footer {
+  background-color: #5C4033;           /* Warm brown bakery tone */
+  color: #FFF5E1;                      /* Creamy text color */
+  padding: 50px 10%;                   /* Space inside footer */
+  display: flex;                       /* Side-by-side layout */
+  justify-content: space-between;      /* Even spacing between sections */
+  align-items: flex-start;             /* Align items at top */
+  flex-wrap: wrap;                     /* Wrap on small screens */
+  gap: 40px;                           /* Space between columns */
+  border-top: 5px solid #E08E45;       /* Accent line matching buttons */
+}
+
+/* Each footer column */
+footer div {
+  flex: 1;
+  min-width: 220px;                    /* Prevents columns from shrinking too much */
+}
+
+/* Titles inside footer */
+footer h3, 
+footer h4 {
+  font-family: 'Poppins', sans-serif;
+  color: #FFF5E1;
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+}
+
+/* Footer text */
+footer p {
+  font-size: 1rem;
+  color: #f2e3d5;
+  line-height: 1.6;
+}
+
+/* Footer links */
+footer a {
+  color: #F7CAC9;                      /* Soft pink accent color */
+  text-decoration: none;
+  display: inline-block;
+  margin-bottom: 8px;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: #ffffff;                      /* Brighter hover color */
+}
+
+/* Footer lists (for links) */
+footer ul {
+  list-style: none;
+  padding: 0;
+}
+
+footer ul li {
+  margin-bottom: 8px;
+}
+
+/* Social icons (if images used) */
+footer .footer-socials img {
+  width: 25px;
+  height: 25px;
+  margin-right: 10px;
+  filter: brightness(90%);
+  transition: filter 0.3s ease;
+}
+
+footer .footer-socials img:hover {
+  filter: brightness(120%);
+}
+
+/* Bottom copyright line */
+.footer-bottom {
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+  border-top: 1px solid #f5d9b8;
+  padding-top: 15px;
+  font-size: 0.9rem;
+  color: #f2e3d5;
+}
+/* ====== ABOUT PAGE - BOOTSTRAP RESPONSIVE STYLING ====== */
+
+/* Body padding for fixed header */
+body {
+    padding-top: 80px;
+}
+
+/* About Hero Section */
+.about-hero {
+    background-color: #fff8f2;
+    padding: 80px 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.about-hero .hero-text {
+    flex: 1;
+    min-width: 300px;
+}
+
+.about-hero h2 {
+    font-size: 2.5rem;
+    color: #4b2e05;
+    margin-bottom: 1.5rem;
+    text-transform: capitalize;
+}
+
+.about-hero p {
+    font-size: 1.1rem;
+    color: #5c4c3a;
+    line-height: 1.8;
+}
+
+.about-hero .hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 300px;
+}
+
+.about-hero .hero-image img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+}
+
+/* About Story Section */
+.about-story {
+    padding: 80px 10%;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.about-story .story-text {
+    flex: 1;
+    min-width: 300px;
+    order: 2;
+}
+
+.about-story h2 {
+    font-size: 2rem;
+    color: #4b2e05;
+    margin-bottom: 1.5rem;
+    text-transform: capitalize;
+}
+
+.about-story p {
+    font-size: 1.1rem;
+    color: #5c4c3a;
+    line-height: 1.8;
+}
+
+.about-story .story-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 300px;
+    order: 1;
+}
+
+.about-story .story-image img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+}
+
+/* About Values Section */
+.about-values {
+    background-color: #fff8f2;
+    padding: 80px 10%;
+    text-align: center;
+}
+
+.about-values h2 {
+    font-size: 2rem;
+    color: #4b2e05;
+    margin-bottom: 2rem;
+    text-transform: capitalize;
+}
+
+.about-values ul {
+    list-style: none;
+    padding: 0;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.about-values li {
+    font-size: 1.2rem;
+    color: #5c4c3a;
+    padding: 15px;
+    margin-bottom: 10px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-values li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+/* About Team Section */
+.about-team {
+    padding: 80px 10%;
+    background-color: #fff;
+    text-align: center;
+}
+
+.about-team h2 {
+    font-size: 2rem;
+    color: #4b2e05;
+    margin-bottom: 3rem;
+    text-transform: capitalize;
+}
+
+.about-team .team-list {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.about-team .team-member {
+    background-color: #fff8f2;
+    border-radius: 15px;
+    padding: 30px;
+    width: 280px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-team .team-member:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.about-team .team-member img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+.about-team .team-member h4 {
+    color: #5C4033;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.about-team .team-member p {
+    color: #6d5c4a;
+}
+
+/* Visit Us Section */
+.visit-us {
+    background-color: #fff8f2;
+    padding: 80px 10%;
+    text-align: center;
+}
+
+.visit-us h2 {
+    font-size: 2rem;
+    color: #4b2e05;
+    margin-bottom: 1.5rem;
+    text-transform: capitalize;
+}
+
+.visit-us p {
+    font-size: 1.1rem;
+    color: #5c4c3a;
+    margin-bottom: 2rem;
+}
+
+/* Responsive Design - Mobile */
+@media (max-width: 768px) {
+    .about-hero,
+    .about-story {
+        flex-direction: column;
+        padding: 60px 5%;
+    }
+    
+    .about-hero .hero-text,
+    .about-hero .hero-image,
+    .about-story .story-text,
+    .about-story .story-image {
+        order: unset;
+        min-width: 100%;
+    }
+    
+    .about-hero h2,
+    .about-story h2,
+    .about-values h2,
+    .about-team h2,
+    .visit-us h2 {
+        font-size: 1.8rem;
+    }
+    
+    .about-values,
+    .about-team,
+    .visit-us {
+        padding: 60px 5%;
+    }
+    
+    .about-team .team-member {
+        width: 100%;
+        max-width: 350px;
+    }
+}
+
+/* Responsive Design - Tablet */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .about-hero,
+    .about-story {
+        padding: 70px 7%;
+    }
+    
+    .about-values,
+    .about-team,
+    .visit-us {
+        padding: 70px 7%;
+    }
+}
+/* ====== PRODUCTS PAGE - MY CUSTOM STYLING ====== */
+
+/* Products Page Styling */
+.products-intro {
+    background-color: #fff8f2;
+    padding: 80px 10%;
+    text-align: center;
+}
+
+.products-intro h2 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.5rem;
+    color: #4b2e05;
+    margin-bottom: 1.5rem;
+}
+
+.products-list {
+    padding: 60px 10%;
+    background-color: #fff;
+}
+
+.products-list h2 {
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    color: #5C4033;
+    margin-bottom: 40px;
+}
+
+.first-cat, .second-cat {
+    margin-bottom: 60px;
+}
+
+.first-cat h3, .second-cat h3 {
+    font-family: 'Poppins', sans-serif;
+    color: #4b2e05;
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.breads, .pastries {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.fav {
+    background-color: #fff8f2;
+    padding: 60px 10%;
+    text-align: center;
+}
+
+.fav h3 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2rem;
+    color: #4b2e05;
+    margin-bottom: 30px;
+}
+
+.best {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.action {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #fff;
+}
+
+.action h3 {
+    font-family: 'Poppins', sans-serif;
+    color: #5C4033;
+    margin-bottom: 20px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .breads, .pastries, .best {
+        grid-template-columns: 1fr;
+        padding: 0 20px;
+    }
+    
+    .products-intro, .products-list, .fav {
+        padding: 40px 5%;
+    }
+}
+
+/*this is for contact us page */
+
+.iframe {
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
