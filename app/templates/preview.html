@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- TODO: USE BLOCK TITLE INSTEAD -->
+    <title>Sweet Crumbs Bakery</title>
+    <link rel="stylesheet" href="/app/static/css/style.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes:wght@400;600;700&family=Poppins:wght@400;500;600&display=swap"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <!-- TODO: UPDATE ALL PATH WITH URL_FOR() -->
+  <body>
+    <div class="nav-overlay"></div>
+    <header>
+      <div class="logo">
+        <a href="/" class="logo-link">
+          <span class="logo-main">Sweet Crumbs</span>
+          <span class="logo-sub">Bakery</span>
+        </a>
+      </div>
+      <button class="nav-toggle" aria-label="nav-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav>
+        <a href="/">Home</a>
+        <a href="about">About</a>
+        <a href="products">Products</a>
+        <a href="contact">Contact</a>
+        <a href="login">Login</a>
+        <a href="register">Register</a>
+      </nav>
+    </header>
+    <main>
+      <section class="blobsec bg-cream py-5 text-center">
+        <div class="gold-cir"></div>
+        <div class="blo container">
+          <h2 class="text-brown mb-3">Get in Touch</h2>
+          <p class="lead">We'd love to hear from you — or better yet, come visit us!</p>
+        </div>
+        <div class="pink-cir"></div>
+      </section>
+
+      <!-- Contact Information & Map - using Bootstrap grid (row and columns) -->
+      <section class="py-5">
+        <div class="container">
+          <div class="row g-4 d-flex align-items-center">
+            <!-- Left column: Contact Info (takes half width on medium screens) -->
+            <div class="info col-md-6">
+              <h3 class="text-brown mb-4">Contact Information</h3>
+              <p><i class="fa-solid fa-address-book"></i> 12 Rue des Roses, Casablanca, Morocco</p>
+              <p><i class="fa-solid fa-phone"></i> +212 6 12 34 56 78</p>
+              <p>
+                <i class="fa-solid fa-at"></i>
+                sweetcrumbs@gmail.com
+              </p>
+            </div>
+
+            <!-- Right column: Map (takes half width on medium screens) -->
+            <div class="col-md-6">
+              <div class="map">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3311.103!2d-7.5898!3d33.5731"
+                  width="100%"
+                  height="300"
+                  style="border: 0"
+                  allowfullscreen=""
+                  loading="lazy"
+                >
+                </iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Opening Hours -->
+      <section class="bg-cream py-5">
+        <div class="container text-center">
+          <h3 class="text-brown mb-4 fw-bold fs-2">Opening Hours</h3>
+          <div class="text-brown">
+            <div class="d-flex justify-content-between py-4 border-bottom border-2 border-black">
+              <span class="mb-2 fw-semibold fs-5">Monday — Friday: </span>
+              <p class="mb-2 fw-semibold fs-5">9:00 AM — 7:00 PM</p>
+            </div>
+            <div class="d-flex justify-content-between py-4 border-bottom border-2 border-black">
+              <span class="mb-2 fw-semibold fs-5">Saturday: </span>
+              <p class="mb-2 fw-semibold fs-5">10:00 AM — 6:00 PM</p>
+            </div>
+            <div class="d-flex justify-content-between py-4 border-bottom border-2 border-black">
+              <span class="fw-light fs-6">Sunday: </span>
+              <p class="fw-light fs-6">Closed</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Form - Bootstrap form classes -->
+      <section class="py-5">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-6">
+              <h3 class="text-brown text-center mb-4 fs-2 fw-bold gy-4">Send Us a Message</h3>
+              <form>
+                <!-- Name input with Bootstrap form-control -->
+                <div class="mb-4">
+                  <label for="name" class="form-label">Your Name </label><input type="text" class="form-control" placeholder="Mustapha Kassimi" required />
+                </div>
+
+                <!-- Email input -->
+                <div class="mb-4">
+                  <label for="email" class="form-label">Your Email </label><input type="email" class="form-control" placeholder="KassMustapha@gmail.com" required />
+                </div>
+
+                <!-- Message textarea -->
+                <div class="mb-4">
+                  <label for="message" class="form-label">Your Message </label>
+                  <textarea
+                    class="form-control"
+                    rows="5"
+                    placeholder="Tell us what's on your mind..."
+                    required
+                  ></textarea>
+                </div>
+
+                <!-- Submit button with custom styling -->
+                <div class="text-center">
+                  <button type="submit" class="btn-custom">Send Message</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="container">
+        <div class="row gy-3 align-middle border-bottom">
+          <!-- Brand section -->
+          <div class="col-lg-5 col-md-12 gy-4">
+            <a href="/" class="logo-link">
+              <span class="footer-main">Sweet Crumbs</span>
+              <span class="footer-sub">Bakery</span>
+            </a>
+            <p class="mt-3">Sweet Crumbs Sweet Life</p>
+            <div class="d-flex gap-3 mt-3">
+              <a href="https://facebook.com" target="_blank" aria-label="facebook"
+                ><i class="fab fa-facebook soclink"></i
+              ></a>
+              <a href="https://instagram.com" target="_blank" aria-label="instagram"
+                ><i class="fab fa-instagram soclink"></i
+              ></a>
+              <a href="https://x.com" target="_blank" aria-label="x"
+                ><i class="fab fa-twitter soclink"></i
+              ></a>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <h6 class="mb-2">Explore</h6>
+            <ul class="list-unstyled">
+              <li><a href="/">Home</a></li>
+              <li><a href="about">About</a></li>
+              <li><a href="products">Products</a></li>
+              <li><a href="contact">Contact</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-4 col-md-6 gy-3">
+            <h6>Find Us</h6>
+            <p>Casablanca, Morocco</p>
+            <p>From 9 am to 7 pm Monday to Saturday</p>
+            <p>ContactUs@sweetcrumbsbakery.com</p>
+          </div>
+        </div>
+        <div class="row mt-5">
+          <div class="col-12">
+            <p class="text-center">&copy;<span></span>Sweet Crumbs Bakery.All rights reserved</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    {% block scripts %} {% endblock %}
+  </body>
+</html>

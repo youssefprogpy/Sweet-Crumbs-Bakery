@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- TODO: USE BLOCK TITLE INSTEAD -->
+    <title>Sweet Crumbs Bakery</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes:wght@400;600;700&family=Poppins:wght@400;500;600&display=swap"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <!-- TODO: UPDATE ALL PATH WITH URL_FOR() -->
+  <body>
+    <div class="nav-overlay"></div>
+    <header>
+      <div class="logo">
+        <a href="{{ url_for('main.index') }}" class="logo-link">
+          <span class="logo-main">Sweet Crumbs</span>
+          <span class="logo-sub">Bakery</span>
+        </a>
+      </div>
+      <button class="nav-toggle" aria-label="nav-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav>
+        <a href="{{ url_for('main.index') }}">Home</a>
+        <a href="{{ url_for('main.about') }}">About</a>
+        <a href="{{ url_for('main.products') }}">Products</a>
+        <a href="{{ url_for('main.contact') }}">Contact</a>
+        <a href="login">Login</a>
+        <a href="register">Register</a>
+      </nav>
+    </header>
+    <main>{% block content %} {% endblock %}</main>
+    <footer>
+      <div class="container">
+        <div class="row gy-3 align-middle border-bottom">
+          <!-- Brand section -->
+          <div class="col-lg-5 col-md-12 gy-4">
+            <a href="/" class="logo-link">
+              <span class="footer-main">Sweet Crumbs</span>
+              <span class="footer-sub">Bakery</span>
+            </a>
+            <p class="mt-3">Sweet Crumbs Sweet Life</p>
+            <div class="d-flex gap-3 mt-3">
+              <a href="https://facebook.com" target="_blank" aria-label="facebook"
+                ><i class="fab fa-facebook soclink"></i
+              ></a>
+              <a href="https://instagram.com" target="_blank" aria-label="instagram"
+                ><i class="fab fa-instagram soclink"></i
+              ></a>
+              <a href="https://x.com" target="_blank" aria-label="x"
+                ><i class="fab fa-twitter soclink"></i
+              ></a>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <h6 class="mb-2">Explore</h6>
+            <ul class="list-unstyled">
+              <li><a href="{{ url_for('main.index') }}">Home</a></li>
+              <li><a href="{{ url_for('main.about') }}">About</a></li>
+              <li><a href="{{ url_for('main.products') }}">Products</a></li>
+              <li><a href="{{ url_for('main.contact') }}">Contact</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-4 col-md-6 gy-3">
+            <h6>Find Us</h6>
+            <p>Casablanca, Morocco</p>
+            <p>From 9 am to 7 pm Monday to Saturday</p>
+            <p>ContactUs@sweetcrumbsbakery.com</p>
+          </div>
+        </div>
+        <div class="row mt-5">
+          <div class="col-12 position-relative">
+            <p class="position-absolute top-50 start-50 translate-middle">
+              &copy;<span></span>Sweet Crumbs Bakery.All rights reserved
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    {% block scripts %} {% endblock %}
+  </body>
+</html>

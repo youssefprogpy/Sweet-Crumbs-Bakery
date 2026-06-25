@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block title %}Home - Sweet Crumbs{% endblock %}
+{% block content %}
+<!-- TODO: FIX THE PATHS WHEN ROUTES SETTLE -->
+<section class="hero">
+  <div class="hero-content">
+    <h2>Welcome To Sweet Crumbs Bakery</h2>
+    <p>Where every bite feels like home</p>
+    <a href="{{ url_for('main.products') }}" class="btn">See Our Menu</a>
+  </div>
+</section>
+<section class="about-preview">
+  <div class="about-text">
+    <h3>Our Story</h3>
+    <p>
+      Sweet Crumbs began in 2012 as a small family bakery. Our goal is to bring warmth and sweetness
+      to every table with handmade pastries made fresh daily.
+    </p>
+    <a href="{{ url_for('main.about') }}" class="btn-sweet">Read More</a>
+  </div>
+  <div class="about-image">
+    <img src="{{ url_for('static',filename='/uploads/bakery.jpg') }}" alt="Inside Crumbs bakery" />
+  </div>
+</section>
+<section class="Products-preview">
+  <h3>Our favorites</h3>
+  <div class="product-list">
+    <div class="product-card">
+      <img src="{{ url_for('static',filename='/uploads/croissant.jpg') }}" alt="croissant" />
+      <h4>Croissant</h4>
+      <p>Classic buttery croissant</p>
+      <span>10 MAD</span>
+    </div>
+    <div class="product-card">
+      <img src="{{ url_for('static',filename='/uploads/cupcake.jpg') }}" alt="cupcake" />
+      <h4>Cupcake</h4>
+      <p>Chocolate or vanilla with icing</p>
+      <span>12 MAD</span>
+    </div>
+    <div class="product-card">
+      <img src="{{ url_for('static',filename='/uploads/muffin.jpg') }}" alt="muffin" />
+      <h4>Muffin</h4>
+      <p>Blueberry Muffin</p>
+      <span>13 MAD</span>
+    </div>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% block title %}About - Sweet Crumbs{% endblock %}
+{% block content %}
+<section class="about-hero">
+  <div class="hero-text">
+    <h2>Who are we?</h2>
+    <p>
+      At Sweet Crumbs Bakery, every pastry tells a story of love, care, and tradition. Baked fresh
+      daily with the finest ingredients – right here in your neighborhood.
+    </p>
+  </div>
+  <div class="hero-image">
+    <img src="{{ url_for('static', filename='/uploads/place.jpg') }}" alt="headquarters" />
+  </div>
+</section>
+<section class="about-story">
+  <div class="story-text">
+    <h2>How it all started</h2>
+    <p>
+      Sweet Crumbs was born in 2012 from a small family kitchen. Our founder, Marie, started baking
+      for friends and neighbors who couldn't resist the smell of her fresh croissants. What began as
+      a small passion project quickly turned into a bakery loved by our whole community.
+    </p>
+  </div>
+  <div class="story-image">
+    <img src="{{ url_for('static',filename='/uploads/story.jpg') }}" alt="how we came to light" />
+  </div>
+</section>
+<section class="about-values">
+  <h2>Our principles</h2>
+  <ul>
+    <li>Freshly baked every morning</li>
+    <li>Made with natural, local ingredients</li>
+    <li>Traditional family recipes</li>
+    <li>Served with a smile</li>
+  </ul>
+</section>
+<section class="about-team">
+  <h2>Meet our team</h2>
+  <div class="team-list">
+    <div class="team-member">
+      <img src="{{ url_for('static',filename='/uploads/member1.jpg') }}" alt="Marie Tembo" />
+      <h4>Marie Tembo</h4>
+      <p>Founder & head baker</p>
+    </div>
+    <div class="team-member">
+      <img src="{{ url_for('static',filename='/uploads/member2.jpg') }}" alt="Rasmus Hoiland" />
+      <h4>Rasmus Hoiland</h4>
+      <p>Pastry chef</p>
+    </div>
+  </div>
+</section>
+<section class="visit-us">
+  <h2>Visit Sweet Crumbs</h2>
+  <p>12 Rue des Roses – open daily, 7:00 AM to 7:00 PM</p>
+  <a href="contact.html" class="btn-custom">Get Directions</a>
+</section>
+{% endblock %}
