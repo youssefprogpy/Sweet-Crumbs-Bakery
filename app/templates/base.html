@@ -25,7 +25,7 @@
     <div class="nav-overlay"></div>
     <header>
       <div class="logo">
-        <a href="{{ url_for('main.index') }}" class="logo-link">
+        <a href="{{ url_for('main.home') }}" class="logo-link">
           <span class="logo-main">Sweet Crumbs</span>
           <span class="logo-sub">Bakery</span>
         </a>
@@ -36,21 +36,33 @@
         <span></span>
       </button>
       <nav>
-        <a href="{{ url_for('main.index') }}">Home</a>
+        <a href="{{ url_for('main.home') }}">Home</a>
         <a href="{{ url_for('main.about') }}">About</a>
         <a href="{{ url_for('main.products') }}">Products</a>
         <a href="{{ url_for('main.contact') }}">Contact</a>
-        <a href="login">Login</a>
-        <a href="register">Register</a>
+        {% if current_user.is_authenticated %}
+        <form action="{{ url_for('auth.logout') }}" method="post">
+          <!-- TODO: CSRF token -->
+          <button type="submit" class="act-btn">Log out</button>
+        </form>
+        {% else %}
+        <a href="{{ url_for('auth.login') }}">Login</a>
+        <a href="{{ url_for('auth.register') }}">Register</a>
+        {% endif %}
       </nav>
     </header>
-    <main>{% block content %} {% endblock %}</main>
+    <main>
+      {% with messages = get_flashed_messages(with_categories = True) %} {% if messages %} {% for
+      category,message in messages %}
+      <div class=" flash flash-{{category}}">{{ message }}</div>
+      {% endfor %} {% endif %} {% endwith %} {% block content %} {% endblock %}
+    </main>
     <footer>
       <div class="container">
         <div class="row gy-3 align-middle border-bottom">
           <!-- Brand section -->
           <div class="col-lg-5 col-md-12 gy-4">
-            <a href="/" class="logo-link">
+            <a href="{{url_for('main.home')}}" class="logo-link">
               <span class="footer-main">Sweet Crumbs</span>
               <span class="footer-sub">Bakery</span>
             </a>
@@ -63,14 +75,14 @@
                 ><i class="fab fa-instagram soclink"></i
               ></a>
               <a href="https://x.com" target="_blank" aria-label="x"
-                ><i class="fab fa-twitter soclink"></i
+                ><i class="fa-brands fa-x-twitter soclink"></i
               ></a>
             </div>
           </div>
           <div class="col-lg-3 col-md-6">
             <h6 class="mb-2">Explore</h6>
             <ul class="list-unstyled">
-              <li><a href="{{ url_for('main.index') }}">Home</a></li>
+              <li><a href="{{ url_for('main.home') }}">Home</a></li>
               <li><a href="{{ url_for('main.about') }}">About</a></li>
               <li><a href="{{ url_for('main.products') }}">Products</a></li>
               <li><a href="{{ url_for('main.contact') }}">Contact</a></li>

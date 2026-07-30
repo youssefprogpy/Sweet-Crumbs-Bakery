@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sweet Crumbs Bakery - Register</title>
-    <link rel="stylesheet" href="/app/static/css/login.css" />
+    <title>Sweet Crumbs Bakery - Login</title>
+    <link rel="stylesheet" href="{{url_for('static',filename = 'css/auth.css')}}" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
@@ -26,51 +26,25 @@
       </a>
     </header>
     <main>
-      <section class="register-wrapper">
-        <div class="brand-panel">
-          <div>
-            <h1>Sweet Crumbs</h1>
-            <span>bakery</span>
+      {% with messages = get_flashed_messages(with_categories = True) %} {% if messages %} {% for
+      category,message in messages %}
+      <div class=" flash flash-{{category}}">{{ message }}</div>
+      {% endfor %} {% endif %} {% endwith %}
+      <section class="login-bg">
+        <div class="the-card">
+          <div class="welcoming">
+            <h1>Welcome Back</h1>
+            <p>New Here?<a href="{{ url_for('auth.register') }}"> Create Account</a></p>
           </div>
-          <p>Join the Sweet Crumbs family</p>
-        </div>
-        <div class="form-panel">
-          <h2>Sign Up</h2>
-          <form action="{{ url_for('auth.register') }}" method="post" class="regiform">
-            <label for="fullname">Fullname:</label>
-            <input
-              type="text"
-              name="fullname"
-              id="fullname"
-              placeholder="Ex:Paul Smith"
-              class="ins"
-            />
-            <label for="email">Email:</label>
-            <input
-              type="email"
-              name="email"
-              id="email"
-              placeholder="Ex:user@example.com"
-              class="ins"
-            />
-            <label for="password">Password:</label>
-            <input
-              type="password"
-              name="password"
-              id="password"
-              placeholder="********"
-              class="ins"
-            />
-            <label for="confirm_password">Confirm Password:</label>
-            <input
-              type="password"
-              name="confirm_password"
-              id="confirm_password"
-              placeholder="********"
-              class="ins"
-            />
-            <button type="submit" class="act-btn">Register</button>
-            <p>Already have an account? <a href="{{url_for('auth.login')}}">Log In</a></p>
+          <form action="{{ url_for('auth.login') }}" method="post" class="logform">
+            <!-- TODO: CSRF token -->
+            <label for="username">Username</label>
+            <input type="email" class="inpu" name="username" placeholder="ex:you@example.com" />
+            <label for="password">Password</label>
+            <input type="password" class="inpu" name="password" placeholder="********" />
+            <!-- TODO: Make it a functional link in next phases -->
+            <p>forgot password?</p>
+            <button type="submit" class="act-btn">Log In</button>
           </form>
           <div class="goog-sec">
             <div class="divider"><span>Or Continue With</span></div>
@@ -93,7 +67,7 @@
                   d="M43.6 20.5H42V20H24v8h11.3c-.8 2.3-2.3 4.3-4.2 5.7l6.5 5.4C41.8 35.7 45 30.4 45 24c0-1.2-.1-2.4-.4-3.5z"
                 />
               </svg>
-              <span>Sign up with Google</span>
+              <span>Sign in with Google</span>
             </a>
           </div>
         </div>

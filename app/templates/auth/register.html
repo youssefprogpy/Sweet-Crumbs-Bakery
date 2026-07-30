@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sweet Crumbs Bakery - Register</title>
-    <link rel="stylesheet" href="/app/static/css/login.css" />
+    <link rel="stylesheet" href="{{url_for('static', filename = 'css/auth.css')}}" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
@@ -26,6 +26,10 @@
       </a>
     </header>
     <main>
+      {% with messages = get_flashed_messages(with_categories = True) %} {% if messages %} {% for
+      category,message in messages %}
+      <div class=" flash flash-{{category}}">{{ message }}</div>
+      {% endfor %} {% endif %} {% endwith %}
       <section class="register-wrapper">
         <div class="brand-panel">
           <div>
@@ -37,6 +41,8 @@
         <div class="form-panel">
           <h2>Sign Up</h2>
           <form action="{{ url_for('auth.register') }}" method="post" class="regiform">
+                        <!-- TODO: CSRF token -->
+
             <label for="fullname">Fullname:</label>
             <input
               type="text"
